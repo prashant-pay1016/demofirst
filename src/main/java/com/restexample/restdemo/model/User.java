@@ -1,21 +1,34 @@
 package com.restexample.restdemo.model;
 
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "user")
 public class User {
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
+
     private String address;
+
     private Byte age;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     private String education;
     private Long mobileNumber;
 
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId() {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
